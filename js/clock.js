@@ -10,13 +10,18 @@ var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.floor(diff / oneDay);
 
-if ( isOdd(day) ) { $('#schtrich').css('display','inline'); }
+if ( isOdd(day) ) { 
+	$('#schtrich').css('left','390px'); 	
+} else {
+	$('#schtrich').css({'left':'265px','margin-top':'30px'});
+}
 
+// can't devide on 2: 3,5,7,9,11..n
 function isOdd(n)
 {
    return isNumber(n) && (n % 2 == 1);
 }
-
+// devided on 2: 2,4,6,8..10..n
 function isEven(n) 
 {
    return isNumber(n) && (n % 2 == 0);
